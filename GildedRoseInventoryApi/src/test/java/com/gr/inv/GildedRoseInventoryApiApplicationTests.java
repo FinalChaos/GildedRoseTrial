@@ -30,6 +30,6 @@ public class GildedRoseInventoryApiApplicationTests {
     @Test
     public void inventoryList() throws Exception {
 
-        this.mockMvc.perform(get("/greeting"));
+        this.mockMvc.perform(get("/greetin"));
     }
 }
