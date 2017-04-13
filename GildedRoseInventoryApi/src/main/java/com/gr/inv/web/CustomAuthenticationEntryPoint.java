@@ -1,4 +1,4 @@
-package com.gr.inv;
+package com.gr.inv.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;

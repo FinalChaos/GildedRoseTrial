@@ -1,4 +1,4 @@
-package com.gr.inv;
+package com.gr.inv.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
