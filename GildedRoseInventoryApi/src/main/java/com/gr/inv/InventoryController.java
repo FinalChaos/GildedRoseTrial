@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gr.inv.fakedata.FakeDataGenerator;
+import com.gr.inv.model.Item;
+import com.gr.inv.model.ItemPurchase;
 
 @RestController
 public class InventoryController {

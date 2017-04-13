@@ -3,7 +3,7 @@ package com.gr.inv.fakedata;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gr.inv.Item;
+import com.gr.inv.model.Item;
 
 /***
  * Since this is a demo application with no db we are hard coding a lot of fake data.

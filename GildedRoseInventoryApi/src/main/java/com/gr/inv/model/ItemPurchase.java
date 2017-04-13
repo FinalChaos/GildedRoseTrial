@@ -1,4 +1,4 @@
-package com.gr.inv;
+package com.gr.inv.model;
 
 public class ItemPurchase {
 
