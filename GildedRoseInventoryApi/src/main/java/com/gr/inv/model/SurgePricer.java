@@ -17,7 +17,7 @@ import java.util.Date;
  * Store the surge multiplier. Afterwards apply the multiplier to each price. Use the provided routine for calculating. Note there is no 
  * compounding. Two 10% surges lead to a multiplier of 120 not 121. Also once a surge occurs the class resets itself and a complete count of 
  * views must happen before the next surge. In other words after 10 views in the window you get a surge you need 10 more views in the window
- * to get the next surge<p>
+ * to get the next surge. See class InventoryDaoImpl for example <p>
  * The method is synchronized so if two views happen concurrently internal state is protected.
  * <p> Implementation: Use an array of longs in a round robin style to record view times. Each new view replaces the oldest previous view. The array is always
  * initialized to longs corresponding to a very old time so even when first initialized (or reset after a surge) the array acts as if

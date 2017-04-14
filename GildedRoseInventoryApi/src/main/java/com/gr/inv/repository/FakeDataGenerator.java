@@ -18,7 +18,7 @@ public class FakeDataGenerator {
 
     	addItem(items,new Item("chair","Antique Chair", 1000, 1));
     	addItem(items,new Item("coin","Rare Roman Denarius", 5000, 10));
-    	addItem(items,new Item("Action#1","Super Man Fair Condition", 100000, 1));
+    	addItem(items,new Item("Action1","Super Man Fair Condition", 100000, 1));
     	return items;
     }
     
