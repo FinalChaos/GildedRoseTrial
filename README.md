@@ -28,7 +28,7 @@ Clone from github using STS. Open using project wizard chose General > Projects 
 * Not sure how to answer "What kind of architecture?" question. Not sure what name I would use for a type: "Spring Rest with 3 tier"
 
 
-# Sanple responses
+# Sample responses
 * You can see the requests above
 * Inventory List response [{"name":"Action1","description":"Super Man Fair Condition","price":100000,"available":1},{"name":"chair","description":"Antique Chair","price":1000,"available":1},{"name":"coin","description":"Rare Roman Denarius","price":5000,"available":10}]
 * Buy(Purchase) {"result":"Purchased.","itemsRequested":1,"itemsPurchased":1}
