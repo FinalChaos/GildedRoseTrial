@@ -3,7 +3,25 @@ package com.gr.inv.model;
 import java.util.Date;
 
 /**
- * Does not compound
+ * This class implements the surge pricing.<p>
+ * If there are a certain number of views within a given time window the price of all items goes up by a certain amount.
+ * The number of views, the duration of the time window and the amount the price of items increases are all set in the constructor.
+ * Calling  {@link #calculateSurgePriceMultiplierPercent} determines if the price should surge or not. It records the view time
+ * using java.util.Date as the source of a long that records the surge time. It also increments the surge price multiplier. This is
+ * an integer that contains the percentage impact of the surge pricing. Initially it is 100 for 100% which would mean no surge pricing.
+ * The method is to be called every time the list of items is retrieved. If the surge increase is 10% than after the first surge the
+ * multiplier would be 110. Every price is 10% higher.<p>
+ * The  {@link #applySurgeMultiplier} for applying this to a price. It encapsulates rounding and the percentage.<p>
+ * Usage: Call exactly calculateSurgePriceMultiplierPercent once before each action that counts towards surging. At the time of 
+ * the only known action was writing views of the item list.<p>
+ * Store the surge multiplier. Afterwards apply the multiplier to each price. Use the provided routine for calculating. Note there is no 
+ * compounding. Two 10% surges lead to a multiplier of 120 not 121. Also once a surge occurs the class resets itself and a complete count of 
+ * views must happen before the next surge. In other words after 10 views in the window you get a surge you need 10 more views in the window
+ * to get the next surge<p>
+ * The method is synchronized so if two views happen concurrently internal state is protected.
+ * <p> Implementation: Use an array of longs in a round robin style to record view times. Each new view replaces the oldest previous view. The array is always
+ * initialized to longs corresponding to a very old time so even when first initialized (or reset after a surge) the array acts as if
+ * populated with long ago views. 
  * @author Tomas
  *
  */
