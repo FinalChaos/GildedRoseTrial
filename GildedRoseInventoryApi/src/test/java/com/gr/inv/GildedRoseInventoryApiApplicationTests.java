@@ -24,17 +24,21 @@ public class GildedRoseInventoryApiApplicationTests {
 
     @Autowired
     private MockMvc mockMvc;
+ 
     
-	
     @Test
     public void inventoryListCheckSurge() throws Exception {
  
+    	// had difficulty getting $[?(@.name=='chair')].price to work with matcher (always added square brackets)
+    	// so used this has size function - and qualified with expected price
+    	final String unsurgedJsonPathForChair = "$[?(@.name=='chair' && @.price==1000)].price";
+    	final String surgedJsonPathForChair = "$[?(@.name=='chair' && @.price==1100)].price";
     	for (int i = 0; i <= 9; i++) {
-        	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath("$[0].price", Matchers.is(1000) ));			
+        	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath(unsurgedJsonPathForChair, Matchers.hasSize(1) ));			
 		}
 
     	// on the tenth item surge should have happened 
-    	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath("$[0].price", Matchers.is(1100)));
+    	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath(surgedJsonPathForChair, Matchers.hasSize(1)  ));
 
     }
     

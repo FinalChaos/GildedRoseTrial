@@ -17,8 +17,8 @@ public class FakeDataGenerator {
     	Map<String, Item> items = new HashMap<String, Item>();
 
     	addItem(items,new Item("chair","Antique Chair", 1000, 1));
-    	addItem(items,new Item("coin","Rare Roman Denarius", 1000, 10));
-    	addItem(items,new Item("Action1","Super Man Fair Condition", 1000, 1));
+    	addItem(items,new Item("coin","Rare Roman Denarius", 5000, 10));
+    	addItem(items,new Item("Action1","Super Man Fair Condition", 1000000, 1));
     	return items;
     }
     
