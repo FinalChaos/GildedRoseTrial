@@ -33,7 +33,7 @@ public class GildedRoseInventoryApiApplicationTests {
         	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath("$[0].price", Matchers.is(1000) ));			
 		}
 
-    	// on the tenth item surge should have happened
+    	// on the tenth item surge should have happened 
     	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath("$[0].price", Matchers.is(1100)));
 
     }

@@ -8,7 +8,7 @@ import com.gr.inv.model.Item;
 /***
  * Since this is a demo application with no db we are hard coding fake data.
  * This could change later - so for now put it in its own class
- * @author Tomas
+ * @author Tomas    
  *
  */
 public class FakeDataGenerator {
