@@ -29,8 +29,8 @@ public class GildedRoseInventoryApiApplicationTests {
     @Test
     public void inventoryListCheckSurge() throws Exception {
  
-    	for (int i = 0; i < 9; i++) {
-        	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath("$[0].price", Matchers.is(1000)));			
+    	for (int i = 0; i <= 9; i++) {
+        	this.mockMvc.perform(get("/inventoryList")).andExpect(status().isOk()).andExpect(jsonPath("$", Matchers.hasSize(3))).andExpect(jsonPath("$[0].price", Matchers.is(1000) ));			
 		}
 
     	// on the tenth item surge should have happened

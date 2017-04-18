@@ -15,7 +15,7 @@ public class InventoryDaoImpl implements InventoryDao {
 	
 	// this is easy to change to property driven
 	private static long MILLISECONDS_IN_HOUR = 60 * 60 * 1000;
-	private static int NUMBER_OF_VIEWS_IN_WINDOW_TRIGGER_SURGET = 10;
+	private static int NUMBER_OF_VIEWS_IN_WINDOW_TRIGGER_SURGET = 11;
 	private static int SURGE_PRICE_PERCENT = 10;
 	
 	private Map<String, Item> items = FakeDataGenerator.dummyItemList();
